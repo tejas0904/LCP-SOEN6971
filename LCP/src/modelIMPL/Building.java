@@ -1,4 +1,4 @@
-package modelIMPL;
+package modelIMPL; // Definitely a wrong name!
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,20 +8,20 @@ import model.IBuilding;
 import model.IDisplayable;
 import model.ITile;
 
-public class Building extends Displayable implements IBuilding {
+public class Building extends Displayable implements IBuilding { // Aren't all Building Displayable too?
 
 	private List<IDisplayable> listOfOccupants;
 	private List<IDisplayable> listOfPets;
 	private List<IDisplayable> listOfFloors;
-	private ITile[][] listOfTiles;
+	private ITile[][] listOfTiles; // This variable and the next seem very technical and low level compared to the previous ones, are they needed?
 	private Integer numOfFloors;
 
 	public Building(){
-		super();
+		super(); // Not necessary
 		this.listOfFloors = new ArrayList<IDisplayable>();
 		this.listOfOccupants = new ArrayList<IDisplayable>();
 		this.listOfPets = new ArrayList<IDisplayable>();
-		this.listOfTiles = new ITile[21][21];	/* TBD */
+		this.listOfTiles = new ITile[21][21];	/* TBD */ // Why these magic numbers???
 		this.numOfFloors = 0;
 	}
 	
@@ -80,7 +80,7 @@ public class Building extends Displayable implements IBuilding {
 	public void initTiles(ITile[][] tiles) {
 		for(int i = 0; i < 21; i++) {
 			for(int j = 0; j < 21; j++) {
-				this.listOfTiles[i][j] = tiles[i][j];
+				this.listOfTiles[i][j] = tiles[i][j]; // Why here?
 			}
 		}
 	}
