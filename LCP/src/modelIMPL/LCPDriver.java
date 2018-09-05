@@ -16,7 +16,7 @@ import model.IRoom;
 import model.ITile;
 import view.ButtonGrid;
 
-public class LCPDriver implements ILCPDriver,Runnable {
+public class LCPDriver implements ILCPDriver,Runnable { // Is that actually the Game?
 	
 	
 	private final Integer HORIZONTAL_SIZE = 840;
@@ -34,7 +34,7 @@ public class LCPDriver implements ILCPDriver,Runnable {
 	/* Floor = 3, Rest room = 4  = Total tiles = 7 in 1 floor = 21 in 3 floors*/
 
 	@Override
-	public final Integer getNumTilesHorizontally() {
+	public final Integer getNumTilesHorizontally() { // Why would a user need access to these values?
 		return this.TILE_MATRIX_SIZE;
 	}
 	
@@ -87,7 +87,7 @@ public class LCPDriver implements ILCPDriver,Runnable {
 		
 		for(int i = 0; i < this.observers.size(); i++)
 		{
-			floorOne.addObserver(this.observers.get(i));
+			floorOne.addObserver(this.observers.get(i)); // Isn't the list of Observers empty at this point?
 			floorTwo.addObserver(this.observers.get(i));
 			floorThree.addObserver(this.observers.get(i));
 		}
@@ -103,7 +103,7 @@ public class LCPDriver implements ILCPDriver,Runnable {
 		roomDisplay1.setDisplay("Room1");
 		//light gray
 		roomDisplay1.setBackground(new Color(169,169,169));
-		IDisplayableDimension objTileDetails1 = new DisplayableDimension(3, 0, 4, 21);
+		IDisplayableDimension objTileDetails1 = new DisplayableDimension(3, 0, 4, 21); // Why all these computations? The Room should add themselves next to the others...
 		IDisplayable room1 = Factory.getInstance().getRoom(roomDisplay1, objTileDetails1);
 		
 		////Room2
