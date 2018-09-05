@@ -62,7 +62,7 @@ public class Displayable implements IDisplayable {
 	
 	@Override
 	public void checkAddition() {
-		Event addedToTile = new Event("ADDED_TO_TILE");
+		Event addedToTile = new Event("ADDED_TO_TILE"); // Why this method and this magic String?
 		this.notifyObservers(addedToTile);
 	}
 }
