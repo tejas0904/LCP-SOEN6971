@@ -32,12 +32,14 @@ public class Factory {
 	}
 	
 	public IDisplayable getBuilding(IDisplayContent buildingDisplay) {
+		// Why is this method a getter rather than a "create"?
 		Building building = new Building();
 		building.setDisplay(buildingDisplay);
 		return building;
 	}
 
 	public IFloor getFloor(Integer floorNum, IDisplayContent floorDisplay, IDisplayableDimension objTileDetails) {
+		// Why use an Integer rather than an int?
 		IFloor floor = new Floor();
 		floor.setFloorNum(floorNum);
 		floor.setDisplay(floorDisplay);
@@ -46,6 +48,7 @@ public class Factory {
 	}
 	
 	public IPerson getPerson(IRoom room, IDisplayContent personDisplay, IDisplayableDimension objTileDetails) {
+		// How do we distinguish instances of Person?
 		IPerson person = new Person();
 		person.setRoom(room);
 		person.setDisplay(personDisplay);
@@ -85,6 +88,7 @@ public class Factory {
 	/* All Functions for tiles */
 	public void initTiles(ArrayList<ITile> tiles, Integer horizontalSize, 
 			Integer verticalSize, Integer totalTiles) {
+		// Why is this init
 		while (tiles.size() < (totalTiles * totalTiles) - 1) {
 			addTile(tiles, horizontalSize, verticalSize, totalTiles);
 			try {
@@ -96,7 +100,8 @@ public class Factory {
 	}
 	
 	public ITile[][] getTiles(Integer horizontalSize, Integer verticalSize, Integer totalTiles) {
-		ITile[][] tiles = null;
+		// What is this method for? Why would I want to get the tiles in the Game?
+		ITile[][] tiles = null;	
 		if(checkTileComposition(horizontalSize, verticalSize, totalTiles) == true) {
 			tiles = new ITile[totalTiles][totalTiles];
 			ArrayList<ITile> tmpTiles = new ArrayList<ITile>();
@@ -114,7 +119,9 @@ public class Factory {
 	
 	private void addTile(ArrayList<ITile> tiles, Integer horizontalSize, 
 			Integer verticalSize, Integer totalTiles) {
+			// Why is this method singular while it seems to add many tiles?
 		
+		// Why Integers and not int? 
 		Integer tileHeight = horizontalSize / totalTiles;
 		Integer tileWidth = verticalSize / totalTiles;
 		
@@ -124,11 +131,12 @@ public class Factory {
 		
 		if(tiles.size() == (totalTiles * totalTiles)) {
 			System.out.println("Error: addTile: Maximum possible number of tiles already exist");
+			// And it should not return?
 		}
-		
+		// Why this test?
 		if(tiles.size() == 0) {
 			ITile tmpTileOne = new Tile();
-			tmpTileOne.setLocation(new LocationPoints(tileHeight, tileWidth));
+			tmpTileOne.setLocation(new LocationPoints(tileHeight, tileWidth)); // Should be "LocationPoint", singular
 			tmpTileOne.setTileX(0);
 			tmpTileOne.setTileY(0);
 			tiles.add(tmpTileOne);
@@ -157,6 +165,7 @@ public class Factory {
 			}
 			else {
 				System.out.println("TOP NOT FOUND");
+				// Why should a user care about that? What can it do about it anyhow?
 			}
 			
 			for(int i = 0; i < totalTiles; i++) {
