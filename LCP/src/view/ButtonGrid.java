@@ -59,7 +59,7 @@ public class ButtonGrid extends Thread implements IObserver{
 		for(int i = 0; i<21;i++) {
 			for(int j = 0; j<21;j++) {
 				this.grid[i][j] = new JPanel();
-				this.grid[i][j].setLayout(new BoxLayout(this.grid[i][j], BoxLayout.PAGE_AXIS));
+				this.grid[i][j].setLayout(new BoxLayout(this.grid[i][j], BoxLayout.PAGE_AXIS)); // Why not in terms of Tiles?
 				this.frame.add(grid[i][j]);
 			}
 		}
