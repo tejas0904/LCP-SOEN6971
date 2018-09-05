@@ -4,7 +4,7 @@ import java.awt.Point;
 
 import model.ILocationPoints;
 
-public class LocationPoints implements ILocationPoints {
+public class LocationPoints implements ILocationPoints { // ?
 	private Point nwPosition;
 	private Point swPosition;
 	private Point nePosition;
