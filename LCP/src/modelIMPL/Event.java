@@ -2,7 +2,7 @@ package modelIMPL;
 
 import model.IEvent;
 
-public class Event implements IEvent {
+public class Event implements IEvent { // Why in this package?
 
 	private String eventType;
 	
