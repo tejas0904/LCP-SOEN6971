@@ -1,4 +1,4 @@
-package controller;
+package ca.concordia.soen6461.lcp.controller;
 
 public interface IInitGame {
 	public void initBuilding();
@@ -6,5 +6,5 @@ public interface IInitGame {
 	public void initRooms();
 	public void initFurniture();
 	public void initOccupant();
-	public void runAI();
+	public void run();
 }
