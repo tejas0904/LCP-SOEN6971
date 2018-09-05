@@ -6,9 +6,8 @@ import model.IDisplayable;
 import modelIMPL.DisplayContent;
 
 public class InitGame implements IInitGame {
-	private final Integer numFloors = 1;
-	
-	private IDisplayable building;
+	private final Integer NUM_FLOORS = 1; // Respect Java naming conventions.
+	private IDisplayable building; // Why the "InitGame" (emphasis on Init) would know a Building? A Game could know a Building.
 	
 	@Override
 	public void initBuilding() {
@@ -19,7 +18,7 @@ public class InitGame implements IInitGame {
 
 	@Override
 	public void initFloors() {
-		
+		// Why are most of these initXXX() methods empty? Clean up your code!
 	}
 
 	@Override
@@ -43,7 +42,7 @@ public class InitGame implements IInitGame {
 	@Override
 	public void runAI() {
 		// TODO Auto-generated method stub
-		
+		// Why the most important method is empty? How does the game starts then?	
 	}
 
 }
