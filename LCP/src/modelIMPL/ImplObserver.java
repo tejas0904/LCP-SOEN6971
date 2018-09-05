@@ -10,7 +10,7 @@ import model.ITile;
 public class ImplObserver implements IObserver {
 	String toShow[][] = new String[21][21];
 
-	public ImplObserver() {
+	public ImplObserver() { // What is that method for???
 		for(int i = 0; i < 21; i++)
 		{
 			for(int j = 0; j < 21; j++)
@@ -22,12 +22,12 @@ public class ImplObserver implements IObserver {
 	
 	@Override
 	public void update(ITile observable) {
-		
+		// Nothing to do?
 	}
 
 	@Override
 	public void update(IDisplayable observable, IEvent event) {
-		IDisplayableDimension tileDet = observable.getTileDetails();
+		IDisplayableDimension tileDet = observable.getTileDetails(); // Also, in general, put all variables "final".
 		IDisplayContent disp = observable.getDisplay();
 		
 		Integer startX = tileDet.getX();
@@ -43,7 +43,7 @@ public class ImplObserver implements IObserver {
 		}
 		 
 		System.out.println("*********************************************");
-		for(int i = 0; i < 21; i++)
+		for(int i = 0; i < 21; i++) // What are these magic numbers?
 		{
 			for(int j = 0; j < 21; j++)
 			{
