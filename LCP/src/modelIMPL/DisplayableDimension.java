@@ -2,7 +2,7 @@ package modelIMPL;
 
 import model.IDisplayableDimension;
 
-public class DisplayableDimension implements IDisplayableDimension {
+public class DisplayableDimension implements IDisplayableDimension { // Why not use Java Point and Dimension?
 	Integer Y;
 	Integer X;
 	Integer Height;
